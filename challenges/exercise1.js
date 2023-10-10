@@ -1,6 +1,9 @@
 export function getFillings(sandwich) {
 	if (sandwich === undefined) throw new Error('ingredients is required');
-	// Your code here!
+	
+	console.log("sandwich is "+sandwich.fillings);
+	
+	return sandwich.fillings;
 }
 
 export function isFromManchester(person) {
