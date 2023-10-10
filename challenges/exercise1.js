@@ -1,5 +1,8 @@
 export function getFillings(sandwich) {
 	if (sandwich === undefined) throw new Error('ingredients is required');
+	
+	console.log("sandwich is "+sandwich.fillings);
+	
 	return sandwich.fillings;
 }
 
