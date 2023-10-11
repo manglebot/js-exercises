@@ -1,6 +1,14 @@
 export function getSquares(nums) {
 	if (nums === undefined) throw new Error('nums is required');
-	// Your code here!
+
+	const results = [];
+
+	nums.forEach(function (num) {
+		let squared = num * num;
+		results.push(squared);
+	});
+
+	return results;
 }
 
 export function camelCaseWords(words) {
