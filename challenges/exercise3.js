@@ -55,12 +55,35 @@ export function getIntegers(nums) {
 
 export function getCities(users) {
 	if (!users) throw new Error('users is required');
-	// Your code here
+	
+	const cities = [];
+
+	users.forEach(user => {
+		cities.push(user.data.city.displayName);
+	});
+
+	return cities;
 }
 
 export function getSquareRoots(nums) {
 	if (!nums) throw new Error('nums is required');
-	// Your code here
+	
+	const squareRoots = [];
+
+	nums.forEach(number => {
+
+		const output = Math.sqrt(number);
+
+		if(Number.isInteger(output)){
+			squareRoots.push(output);
+		} else {
+			squareRoots.push(Number(output.toFixed(2)));
+			//console.log("output.toFixed: "+output.toFixed(2)); 
+		};
+	});
+
+//	console.log("squareRoots: "+squareRoots);
+	return squareRoots;
 }
 
 export function findSentencesContaining(sentences, str) {
