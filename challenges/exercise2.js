@@ -65,8 +65,6 @@ export function duplicateNumbers(arr1, arr2) {
 		for(const set2Num of set2){
 			if(set1Num == set2Num){
 				duplicates.push(set1Num);
-
-				console.log("duplicates is "+duplicates);
 			};
 		};
 	};
