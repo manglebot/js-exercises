@@ -54,5 +54,22 @@ export function checkIngredients(menu, ingredient) {
 export function duplicateNumbers(arr1, arr2) {
 	if (arr1 === undefined) throw new Error('arr1 is required');
 	if (arr2 === undefined) throw new Error('arr2 is required');
-	// Your code here!
+	
+	const set1 = new Set(arr1);
+	const set2 = new Set(arr2);
+	
+	const duplicates = [];
+
+	for(const set1Num of set1){
+		
+		for(const set2Num of set2){
+			if(set1Num == set2Num){
+				duplicates.push(set1Num);
+
+				console.log("duplicates is "+duplicates);
+			};
+		};
+	};
+
+	return duplicates.sort();
 }
