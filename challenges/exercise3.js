@@ -29,7 +29,15 @@ export function findNamesBeginningWith(names, char) {
 
 export function findVerbs(words) {
 	if (!words) throw new Error('words is required');
-	// Your code here
+	
+	const foundVerbs = [];
+
+	words.forEach(word => {
+		if(word.startsWith("to ")){
+			foundVerbs.push(word);
+		};
+	});
+	return foundVerbs;
 }
 
 export function getIntegers(nums) {
