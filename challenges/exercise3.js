@@ -78,18 +78,25 @@ export function getSquareRoots(nums) {
 			squareRoots.push(output);
 		} else {
 			squareRoots.push(Number(output.toFixed(2)));
-			//console.log("output.toFixed: "+output.toFixed(2)); 
 		};
 	});
 
-//	console.log("squareRoots: "+squareRoots);
 	return squareRoots;
 }
 
 export function findSentencesContaining(sentences, str) {
 	if (!sentences) throw new Error('sentences is required');
 	if (!str) throw new Error('str is required');
-	// Your code here
+	
+	const specifiedString = [];
+
+	sentences.forEach(sentence => {
+		if(sentence.toLowerCase().includes(str.toLowerCase())){
+			specifiedString.push(sentence);
+		}
+	})
+
+	return specifiedString;
 }
 
 export function getLongestSides(triangles) {
