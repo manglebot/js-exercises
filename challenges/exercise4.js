@@ -69,13 +69,20 @@ export const arrShift = (arr) => {
 	arr[0] = end;
 
 	return arr;
-
 };
 
 export const findNeedle = (haystack, searchTerm) => {
 	if (haystack === undefined) throw new Error('haystack is required');
 	if (searchTerm === undefined) throw new Error('searchTerm is required');
-	// Your code here!
+	
+	for (const key in haystack) {
+			const value = haystack[key];
+			if (typeof value === 'string' && value.toLowerCase().includes(searchTerm.toLowerCase())) {
+			return true;
+		} 
+	}
+
+	return false;
 };
 
 export const getWordFrequencies = (str) => {
