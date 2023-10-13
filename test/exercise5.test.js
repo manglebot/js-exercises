@@ -3,11 +3,11 @@ import {
     isValidDNA,
     getComplementaryDNA,
     isItPrime,
+    createMatrix,
 
 } from '../challenges/exercise5';
 
 // ***** to add when needed
-// createMatrix,
 // areWeCovered,
 
 describe('sumMultiples', () => {
@@ -50,3 +50,15 @@ describe('isItPrime', () => {
 		expect(isItPrime(6959)).toBe(true);
 	});
 });
+
+describe('createMatrix', () => {
+	test('should create a matrix with n objects with n text items filled with fill text', () => {
+		expect(createMatrix(3, 'foo')).toEqual([
+            ["foo", "foo", "foo"],
+            ["foo", "foo", "foo"],
+            ["foo", "foo", "foo"]
+        ]);
+	});
+});
+
+
