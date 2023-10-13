@@ -2,11 +2,11 @@ import {
 	sumMultiples,
     isValidDNA,
     getComplementaryDNA,
+    isItPrime,
 
 } from '../challenges/exercise5';
 
 // ***** to add when needed
-// isItPrime,
 // createMatrix,
 // areWeCovered,
 
@@ -31,5 +31,22 @@ describe('getComplementaryDNA', () => {
 		expect(getComplementaryDNA('CGTA')).toBe('GCAT');
 		expect(getComplementaryDNA('CCGT')).toBe('GGCA');
 		expect(getComplementaryDNA('CGTACCGTCGTACCGT')).toBe('GCATGGCAGCATGGCA');
+	});
+});
+
+describe('isItPrime', () => {
+	test('should return true for a prime number', () => {
+		expect(isItPrime(17)).toBe(true);
+		expect(isItPrime(11)).toBe(true);
+	});
+    test('should return false for a non prime number', () => {
+		expect(isItPrime(12)).toBe(false);
+		expect(isItPrime(25)).toBe(false);
+	});
+    test('should return false for a negative number', () => {
+		expect(isItPrime(-7)).toBe(false);
+	});
+    test('should handle large prime number', () => {
+		expect(isItPrime(6959)).toBe(true);
 	});
 });
