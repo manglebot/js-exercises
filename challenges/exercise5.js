@@ -43,7 +43,6 @@ export const isValidDNA = (str) => {
 	}
 
 	return true;
-
 };
 
 /**
@@ -53,6 +52,23 @@ export const isValidDNA = (str) => {
  */
 export const getComplementaryDNA = (str) => {
 	if (str === undefined) throw new Error('str is required');
+
+	let complementaryString = '';
+
+	const basePair = {
+		'A': 'T',
+		'T': 'A',
+		'C': 'G',
+		'G': 'C'
+	  }
+
+	  for(const letter of str) {
+		if(basePair[letter]) {
+			complementaryString += basePair[letter];
+		}
+	  }
+
+	  return complementaryString;
 };
 
 /**

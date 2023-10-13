@@ -1,11 +1,11 @@
 import {
 	sumMultiples,
     isValidDNA,
+    getComplementaryDNA,
 
 } from '../challenges/exercise5';
 
 // ***** to add when needed
-// getComplementaryDNA,
 // isItPrime,
 // createMatrix,
 // areWeCovered,
@@ -23,5 +23,13 @@ describe('isValidDNA', () => {
 		expect(isValidDNA('CGTA')).toBe(true);
 		expect(isValidDNA('CGBAQ')).toBe(false);
 		expect(isValidDNA('CCGGTTAACCGGTTAA')).toBe(true);
+	});
+});
+
+describe('getComplementaryDNA', () => {
+	test('receive a valid DNA string (see above) and should return a string of the complementary base pairs', () => {
+		expect(getComplementaryDNA('CGTA')).toBe('GCAT');
+		expect(getComplementaryDNA('CCGT')).toBe('GGCA');
+		expect(getComplementaryDNA('CGTACCGTCGTACCGT')).toBe('GCATGGCAGCATGGCA');
 	});
 });
