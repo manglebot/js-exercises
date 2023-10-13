@@ -33,6 +33,17 @@ export const sumMultiples = (arr) => {
  */
 export const isValidDNA = (str) => {
 	if (str === undefined) throw new Error('str is required');
+
+	const validDNA = 'ACTG';
+
+	for(let letter of str){
+		if(!validDNA.includes(letter)){
+			return false;
+		}
+	}
+
+	return true;
+
 };
 
 /**
