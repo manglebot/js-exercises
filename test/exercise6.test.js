@@ -2,12 +2,11 @@ import {
 	sumDigits,
     createRange,
     getScreentimeAlertList,
+    hexToRGB,
 
 } from '../challenges/exercise6-optional';
 
-// *** add when needed ***
-// getScreentimeAlertList,
-// hexToRGB,
+// *** add to import when needed ***
 // findWinner,
 
 describe('sumDigits', () => {
@@ -50,5 +49,13 @@ describe('getScreentimeAlertList', () => {
                         ]
             }
         ],"2019-05-04")).toEqual(["beth_1234"]);
+	});
+});
+
+describe('hexToRGB', () => {
+	test('return the sum all the digits in the provided number', () => {
+		expect(hexToRGB('#289b14')).toBe('rgb(40,155,20)');
+		expect(hexToRGB('#9b4c14')).toBe('rgb(155,76,20)');
+		expect(hexToRGB('#e214af')).toBe('rgb(226,20,175)');
 	});
 });
