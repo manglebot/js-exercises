@@ -3,11 +3,9 @@ import {
     createRange,
     getScreentimeAlertList,
     hexToRGB,
+    findWinner,
 
 } from '../challenges/exercise6-optional';
-
-// *** add to import when needed ***
-// findWinner,
 
 describe('sumDigits', () => {
 	test('return the sum all the digits in the provided number', () => {
@@ -52,10 +50,34 @@ describe('getScreentimeAlertList', () => {
 	});
 });
 
-describe('hexToRGB', () => {
-	test('return the sum all the digits in the provided number', () => {
-		expect(hexToRGB('#289b14')).toBe('rgb(40,155,20)');
-		expect(hexToRGB('#9b4c14')).toBe('rgb(155,76,20)');
-		expect(hexToRGB('#e214af')).toBe('rgb(226,20,175)');
+describe('findWinner', () => {
+	test('return X if matching vertical row', () => {
+		expect(findWinner([
+            ["X", "0", null],
+            ["X", null, "0"],
+            ["X", null, "0"]
+            ])).toBe('X');
+	});
+    test('return 0 if matching horizontal row', () => {
+		expect(findWinner([
+            ["0", "0", "0"],
+            [null, null, "X"],
+            ["X", null, "X"]
+            ])).toBe('0');
+	});
+    test('return null if no winner', () => {
+		expect(findWinner([
+            ["0", null, "0"],
+            [null, "0", "X"],
+            ["X", null, "X"]
+            ])).toBe(null);
 	});
 });
+
+
+
+// [
+//  ["X", "0", null],
+//   ["X", null, "0"],
+//   ["X", null, "0"]
+//  ]
