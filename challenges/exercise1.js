@@ -21,11 +21,11 @@ export function countSheep(arr) {
 	
 	let sheepCount = 0;
 
-	for (let i = 0; i < arr.length; i++){
-		if(arr[i] === "sheep"){
+	arr.forEach(sheep => {
+		if(sheep === "sheep"){
 			sheepCount += 1;
 		}
-	}
+	});
 	
 	return sheepCount;
 }
