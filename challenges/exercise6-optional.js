@@ -8,6 +8,15 @@
  */
 export const sumDigits = (n) => {
 	if (n === undefined) throw new Error('n is required');
+
+	const seperateDigits = n.toString().split('');
+	let sumTotal = 0;
+
+	seperateDigits.forEach(digit => {
+		sumTotal += parseInt(digit);
+	});
+
+	return sumTotal;
 };
 
 /**
