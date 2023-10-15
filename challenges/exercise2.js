@@ -22,11 +22,7 @@ export function camelCaseWords(words) {
 		word = word[0].toUpperCase() + word.slice(1);
 		camelOutput += word;
 	});
-	
-	// for (let i = 1; i < words.length; i++){
-	// 	words[i] = words[i][0].toUpperCase() + words[i].slice(1);
-	// 	camelOutput += words[i];
-	// }
+
 	return camelOutput;
 }
 
@@ -48,12 +44,7 @@ export function checkIngredients(menu, ingredient) {
 	if (menu === undefined) throw new Error('menu is required');
 	if (!ingredient) throw new Error('ingredient is required');
 
-	for (let i=0; i < menu.length; i++){
-		if(menu[i].ingredients.includes(ingredient)){
-			return true;
-		};
-	}
-	return false;
+	return menu.some(meal => (meal.ingredients.includes(ingredient)));
 }
 
 export function duplicateNumbers(arr1, arr2) {
