@@ -50,6 +50,16 @@ describe('getScreentimeAlertList', () => {
 	});
 });
 
+
+describe('hexToRGB', () => {
+	test('return the sum all the digits in the provided number', () => {
+		expect(hexToRGB('#289b14')).toBe('rgb(40,155,20)');
+		expect(hexToRGB('#9b4c14')).toBe('rgb(155,76,20)');
+		expect(hexToRGB('#e214af')).toBe('rgb(226,20,175)');
+	});
+});
+
+
 describe('findWinner', () => {
 	test('return X if matching vertical row', () => {
 		expect(findWinner([
@@ -73,11 +83,3 @@ describe('findWinner', () => {
             ])).toBe(null);
 	});
 });
-
-
-
-// [
-//  ["X", "0", null],
-//   ["X", null, "0"],
-//   ["X", null, "0"]
-//  ]
