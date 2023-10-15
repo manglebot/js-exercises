@@ -18,10 +18,15 @@ export function camelCaseWords(words) {
 
 	camelOutput += words[0];
 
-	for (let i = 1; i < words.length; i++){
-		words[i] = words[i][0].toUpperCase() + words[i].slice(1);
-		camelOutput += words[i];
-	}
+	words.slice(1).forEach(word => {
+		word = word[0].toUpperCase() + word.slice(1);
+		camelOutput += word;
+	});
+	
+	// for (let i = 1; i < words.length; i++){
+	// 	words[i] = words[i][0].toUpperCase() + words[i].slice(1);
+	// 	camelOutput += words[i];
+	// }
 	return camelOutput;
 }
 
